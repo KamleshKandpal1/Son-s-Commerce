@@ -9,12 +9,24 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import { All } from "./components/index.js";
+import {
+  All,
+  Cloths,
+  Electronics,
+  Furnitures,
+  Others,
+  Shoes,
+} from "./components/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="/" element={<All />} />
+      <Route path="" element={<All />} />
+      <Route path="cloths" element={<Cloths />} />
+      <Route path="electronics" element={<Electronics />} />
+      <Route path="furnitures" element={<Furnitures />} />
+      <Route path="shoes" element={<Shoes />} />
+      <Route path="others" element={<Others />} />
     </Route>
   )
 );

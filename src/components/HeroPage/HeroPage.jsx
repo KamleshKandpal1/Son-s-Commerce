@@ -19,7 +19,7 @@ function HeroPage() {
             </h1>
             <div className="links flex gap-x-5">
               <NavLink
-                to="/"
+                to=""
                 className={({ isActive }) =>
                   `block ${
                     isActive ? "text-violet-500" : "bg-white"
@@ -29,7 +29,7 @@ function HeroPage() {
                 All
               </NavLink>
               <NavLink
-                to="/"
+                to="/cloths"
                 className={({ isActive }) =>
                   `block ${
                     isActive ? "text-violet-500" : "bg-white"
@@ -39,7 +39,7 @@ function HeroPage() {
                 Cloths
               </NavLink>
               <NavLink
-                to="/"
+                to="/electronics"
                 className={({ isActive }) =>
                   `block ${
                     isActive ? "text-violet-500" : "bg-white"
@@ -49,7 +49,7 @@ function HeroPage() {
                 Electronics
               </NavLink>
               <NavLink
-                to="/"
+                to="/furnitures"
                 className={({ isActive }) =>
                   `block ${
                     isActive ? "text-violet-500" : "bg-white"
@@ -59,7 +59,7 @@ function HeroPage() {
                 Furnitures
               </NavLink>
               <NavLink
-                to="/"
+                to="/shoes"
                 className={({ isActive }) =>
                   `block ${
                     isActive ? "text-violet-500" : "bg-white"
@@ -69,7 +69,7 @@ function HeroPage() {
                 Shoes
               </NavLink>
               <NavLink
-                to="/"
+                to="/others"
                 className={({ isActive }) =>
                   `block ${
                     isActive ? "text-violet-500" : "bg-white"
