@@ -24,7 +24,7 @@ function HeroPage() {
                   `block ${
                     isActive
                       ? "text-violet-800 bg-[#fff] "
-                      : " text-white bg-transparent"
+                      : "text-white bg-transparent"
                   } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
@@ -36,8 +36,8 @@ function HeroPage() {
                   `block ${
                     isActive
                       ? "text-violet-800 bg-[#fff] "
-                      : " text-white bg-transparent"
-                  } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
+                      : "text-white bg-transparent"
+                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
                 Cloths
@@ -48,8 +48,8 @@ function HeroPage() {
                   `block ${
                     isActive
                       ? "text-violet-800 bg-[#fff] "
-                      : " text-white bg-transparent"
-                  } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
+                      : "text-white bg-transparent"
+                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
                 Electronics
@@ -60,8 +60,8 @@ function HeroPage() {
                   `block ${
                     isActive
                       ? "text-violet-800 bg-[#fff] "
-                      : " text-white bg-transparent"
-                  } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
+                      : "text-white bg-transparent"
+                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
                 Furnitures
@@ -72,8 +72,8 @@ function HeroPage() {
                   `block ${
                     isActive
                       ? "text-violet-800 bg-[#fff] "
-                      : " text-white bg-transparent"
-                  } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
+                      : "text-white bg-transparent"
+                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
                 Shoes
@@ -84,8 +84,8 @@ function HeroPage() {
                   `block ${
                     isActive
                       ? "text-violet-800 bg-[#fff] "
-                      : " text-white bg-transparent"
-                  } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
+                      : "text-white bg-transparent"
+                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
                 Others
