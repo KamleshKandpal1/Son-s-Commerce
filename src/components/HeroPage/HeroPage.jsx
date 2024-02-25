@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function HeroPage() {
   return (
     <>
-      <div className="padding w-screen h-[27rem] relative">
+      <div className="padding w-full h-[27rem] relative">
         <div className="ovelay absolute top-0 bottom-0 left-0 right-0 bg-[#f7f7f780]"></div>
         <div
           className="box h-full w-full  bg-cover bg-center rounded-b-md shadow-lg opacity-70"

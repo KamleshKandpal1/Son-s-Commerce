@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
-      <div className="padding w-screen h-[60px] bg-[#1f1f1f] py-1.5 text-center">
+      <div className="padding w-full h-[60px] bg-[#1f1f1f] py-1.5 text-center">
         <p className="text-[#817c7c] text-lg">
           Copyright <FontAwesomeIcon icon={faCopyright} /> 2024 All Right
           Reserved{" "}

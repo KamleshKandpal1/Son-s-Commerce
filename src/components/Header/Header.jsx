@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <>
-      <div className="padding w-screen h-[60px] bg-[#1f1f1f] px-6 flex justify-between items-center">
+      <div className="padding w-full h-[60px] bg-[#1f1f1f] px-6 flex justify-between items-center">
         <div className="left flex items-center gap-x-4 py-2">
           <Link to="/">
             <img src={icon} alt="" className="w-[45px] h-[45px]" />
