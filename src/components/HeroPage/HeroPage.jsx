@@ -22,8 +22,10 @@ function HeroPage() {
                 to=""
                 className={({ isActive }) =>
                   `block ${
-                    isActive ? "text-violet-500" : "bg-white"
-                  } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
+                    isActive
+                      ? "text-violet-800 bg-[#fff] "
+                      : " text-white bg-transparent"
+                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
                 }
               >
                 All
@@ -32,7 +34,9 @@ function HeroPage() {
                 to="/cloths"
                 className={({ isActive }) =>
                   `block ${
-                    isActive ? "text-violet-500" : "bg-white"
+                    isActive
+                      ? "text-violet-800 bg-[#fff] "
+                      : " text-white bg-transparent"
                   } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
                 }
               >
@@ -42,7 +46,9 @@ function HeroPage() {
                 to="/electronics"
                 className={({ isActive }) =>
                   `block ${
-                    isActive ? "text-violet-500" : "bg-white"
+                    isActive
+                      ? "text-violet-800 bg-[#fff] "
+                      : " text-white bg-transparent"
                   } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
                 }
               >
@@ -52,7 +58,9 @@ function HeroPage() {
                 to="/furnitures"
                 className={({ isActive }) =>
                   `block ${
-                    isActive ? "text-violet-500" : "bg-white"
+                    isActive
+                      ? "text-violet-800 bg-[#fff] "
+                      : " text-white bg-transparent"
                   } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
                 }
               >
@@ -62,7 +70,9 @@ function HeroPage() {
                 to="/shoes"
                 className={({ isActive }) =>
                   `block ${
-                    isActive ? "text-violet-500" : "bg-white"
+                    isActive
+                      ? "text-violet-800 bg-[#fff] "
+                      : " text-white bg-transparent"
                   } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
                 }
               >
@@ -72,7 +82,9 @@ function HeroPage() {
                 to="/others"
                 className={({ isActive }) =>
                   `block ${
-                    isActive ? "text-violet-500" : "bg-white"
+                    isActive
+                      ? "text-violet-800 bg-[#fff] "
+                      : " text-white bg-transparent"
                   } w-[90px] h-[90px] bg-transparent border-2 border-white rounded-[50%] text-[12px] font-bold text-white text-center pt-9 px-1`
                 }
               >
