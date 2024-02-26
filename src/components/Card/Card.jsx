@@ -7,12 +7,17 @@ function Card() {
   return (
     <>
       <div className="box w-[280px] h-[400px] py-3 px-4 shadow-2xl mb-6 rounded-lg">
-        <div className="box-top h-[250px] rounded-lg flex flex-col gap-y-2">
+        <div className="box-top h-[250px] rounded-lg flex flex-col gap-y-2 relative">
           <img
-            className="w-full h-[calc(100%-20px)] rounded-lg object-cover"
+            className="w-full h-[calc(100%-20px)] rounded-2xl object-cover"
             src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
             alt=""
           />
+          <Link>
+            <div class="absolute h-[calc(100%-20px)] rounded-2xl inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <p class="text-white text-2xl font-bold">View Details</p>
+            </div>
+          </Link>
         </div>
         <div className="box-bottom">
           <h5 className="text-lg font-bold text-violet-600">Loreal</h5>
