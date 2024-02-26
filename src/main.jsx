@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
 import "./index.css";
 import {
   Route,
@@ -15,6 +14,7 @@ import {
   Electronics,
   Furnitures,
   Others,
+  ProductPage,
   Shoes,
 } from "./components/index.js";
 
@@ -27,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="furnitures" element={<Furnitures />} />
       <Route path="shoes" element={<Shoes />} />
       <Route path="others" element={<Others />} />
+      <Route path="product/:id" element={<ProductPage />} />
     </Route>
   )
 );

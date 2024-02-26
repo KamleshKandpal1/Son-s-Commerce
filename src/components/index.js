@@ -5,3 +5,4 @@ export { default as Electronics } from "./Electronics/Electronics.jsx";
 export { default as Furnitures } from "./Furnitures/Furnitures.jsx";
 export { default as Others } from "./Others/Others.jsx";
 export { default as Shoes } from "./Shoes/Shoes.jsx";
+export { default as ProductPage } from "./Product Page/ProductPage.jsx";
