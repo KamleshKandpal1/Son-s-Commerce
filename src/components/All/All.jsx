@@ -5,16 +5,15 @@ import axios from "axios";
 function All() {
   const options = {
     method: "GET",
-    url: "https://real-time-amazon-data.p.rapidapi.com/search",
+    url: "https://real-time-product-search.p.rapidapi.com/search",
     params: {
-      query: "Phone",
-      page: "1",
-      country: "US",
-      category_id: "aps",
+      q: "Nike shoes",
+      country: "us",
+      language: "en",
     },
     headers: {
       "X-RapidAPI-Key": "67ce80c78dmsh0a71d68130df85cp148b51jsnb0f1c9bfd7bc",
-      "X-RapidAPI-Host": "real-time-amazon-data.p.rapidapi.com",
+      "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com",
     },
   };
   const [userData, setUserData] = useState([]);
@@ -39,10 +38,9 @@ function All() {
       <div className="padding  w-full h-auto py-[4rem] px-[4rem] bg-[#F6F4EB]">
         <div className="box">
           <h2 className="text-5xl font-bold ml-8">All Products</h2>
-          <div className="products flex items-center w-full px-2 mt-6 flex-wrap justify-between">
+          <div className="products flex  flex-1 items-center w-full px-2 mt-6 flex-wrap gap-x-6 justify-around">
             {userData.map((item) => (
               <Card
-                key={item.asin}
                 title={item.product_title}
                 description={item.sales_volume}
                 rating={item.product_star_rating}

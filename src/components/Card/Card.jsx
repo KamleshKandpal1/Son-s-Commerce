@@ -11,7 +11,8 @@ const Card = ({ key, title, description, img, price, rating }) => (
         src={img}
         alt={title}
       />
-      <Link to={`/product/${key}`}>
+
+      <Link to={`/product/${title}`}>
         <div class="absolute h-[calc(100%-20px)] rounded-2xl inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
           <p class="text-white text-2xl font-bold">View Details</p>
         </div>
