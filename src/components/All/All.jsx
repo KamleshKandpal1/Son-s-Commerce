@@ -5,15 +5,16 @@ import axios from "axios";
 function All() {
   const options = {
     method: "GET",
-    url: "https://real-time-product-search.p.rapidapi.com/search",
+    url: "https://real-time-amazon-data.p.rapidapi.com/search",
     params: {
-      q: "Nike shoes",
-      country: "us",
-      language: "en",
+      query: "Phone",
+      page: "1",
+      country: "US",
+      category_id: "aps",
     },
     headers: {
       "X-RapidAPI-Key": "67ce80c78dmsh0a71d68130df85cp148b51jsnb0f1c9bfd7bc",
-      "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com",
+      "X-RapidAPI-Host": "real-time-amazon-data.p.rapidapi.com",
     },
   };
   const [userData, setUserData] = useState([]);

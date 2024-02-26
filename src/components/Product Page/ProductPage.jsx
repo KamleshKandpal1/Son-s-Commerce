@@ -2,12 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
 
-function ProductPage() {
+function ProductPage({ title, description, img, price, rating }) {
   const { id } = useParams();
   const product = {
-    title: "Product Title",
+    title: "title",
     description: "Product Description",
-    img: "product-image-url.jpg",
     price: "$100",
     rating: "4.5",
     img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGVsZWN0cm9uaWN8ZW58MHx8MHx8fDA%3D",

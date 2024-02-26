@@ -12,6 +12,7 @@ import {
   All,
   Cloths,
   Electronics,
+  Error,
   Furnitures,
   Others,
   ProductPage,
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="shoes" element={<Shoes />} />
       <Route path="others" element={<Others />} />
       <Route path="product/:id" element={<ProductPage />} />
+      <Route path="*" element={<Error />} />
     </Route>
   )
 );

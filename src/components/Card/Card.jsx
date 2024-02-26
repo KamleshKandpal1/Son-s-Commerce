@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Card = ({ key, title, description, img, price, rating }) => (
+const Card = ({ title, description, img, price, rating }) => (
   <div className="box w-[280px] h-[400px] py-3 px-4 shadow-2xl mb-6 rounded-lg">
     <div className="box-top h-[250px] rounded-lg flex flex-col gap-y-2 relative">
       <img
