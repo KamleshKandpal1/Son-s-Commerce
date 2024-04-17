@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Kode Mono", monospace;
+}
+::-webkit-scrollbar {
+  width: 0.9rem;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(24, 24, 29);
+}
+::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+  border: 5px solid transparent;
+  border-radius: 10px;
+  background-clip: content-box;
+}
