@@ -25,7 +25,7 @@ function All() {
       <HeroPage apiData={apiData} />
       <div className="w-full h-auto py-16 px-4 sm:px-8 md:px-16 bg-[#F6F4EB]">
         <div className="box">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold sm:mb-6 ">
             Products
           </h2>
           {/* flex flex-1 items-center w-full mt-6 flex-wrap gap-4 justify-around */}
