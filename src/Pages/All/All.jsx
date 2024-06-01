@@ -31,7 +31,7 @@ function All() {
           {/* flex flex-1 items-center w-full mt-6 flex-wrap gap-4 justify-around */}
           <div
             className="products 
-          sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-2"
           >
             {apiData.map((item) => (
               <Card
