@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useApi } from "../../Contexts/Contexts";
 import HeroImage from "../../assets/HeroImage.jpg";
 
-function HeroPage(setProduct) {
+function HeroPage({ setProduct }) {
   const { apiData } = useApi();
 
   const filterByCategory = (categories) => {
@@ -16,91 +16,104 @@ function HeroPage(setProduct) {
 
   return (
     <>
-      <div className="padding w-full h-[27rem] relative">
-        <div className="ovelay absolute top-0 bottom-0 left-0 right-0 bg-[#000000b6]"></div>
+      <div className="w-full h-[27rem] relative">
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-[#000000b6]"></div>
         <div
-          className="box h-full w-full bg-cover bg-center rounded-b-md shadow-lg opacity-70"
+          className="h-full w-full bg-cover bg-center rounded-b-md shadow-lg"
           style={{ backgroundImage: `url(${HeroImage})` }}
         >
-          <div className="info flex items-center justify-center h-2/3 w-2/3   absolute my-[5.5%] mx-[16%] flex-col gap-y-6">
-            <h1 className="text-8xl font-bold text-[#f3eeee] drop-shadow-lg">
+          <div className="flex items-center justify-center h-full w-full absolute flex-col gap-y-6">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#f3eeee] drop-shadow-lg text-center">
               Son's Commerce
             </h1>
-            {/* <div className="links flex gap-x-5">
+            {/* <div className="flex flex-wrap gap-3 justify-center">
               <NavLink
-                onClick={() => filterByCategory("laptops")}
+                to="/all"
+                onClick={() => filterByCategory("all")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 All
               </NavLink>
               <NavLink
+                to="/wardrobe"
+                onClick={() => filterByCategory("wardrobe")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 Wardrobe
               </NavLink>
               <NavLink
+                to="/electronics"
+                onClick={() => filterByCategory("electronics")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 Electronics
               </NavLink>
               <NavLink
+                to="/groceries"
+                onClick={() => filterByCategory("groceries")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 Groceries
               </NavLink>
               <NavLink
+                to="/furnitures"
+                onClick={() => filterByCategory("furnitures")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 Furnitures
               </NavLink>
               <NavLink
+                to="/shoes"
+                onClick={() => filterByCategory("shoes")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 Shoes
               </NavLink>
               <NavLink
+                to="/vehicle"
+                onClick={() => filterByCategory("vehicle")}
                 className={({ isActive }) =>
                   `block ${
                     isActive
-                      ? "text-violet-800 bg-[#fff] "
+                      ? "text-violet-800 bg-[#fff]"
                       : "text-white bg-transparent"
-                  } w-[90px] h-[90px]  border-2 border-white rounded-[50%] text-[12px] font-bold  text-center pt-9 px-1`
+                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
                 }
               >
                 Vehicle
