@@ -30,7 +30,7 @@ export default function Cart() {
                 key={item.id}
                 className="box flex w-full p-4 h-auto flex-col gap-y-2"
               >
-                <div className="box-info flex flex-col md:flex-row p-2 items-center gap-x-3 rounded-lg shadow-2xl bg-[#a3aab4a8]">
+                <div className="box-info flex flex-col md:flex-row p-2 items-center gap-x-3 rounded-lg sm:shadow-2xl bg-[#a3aab4a8]">
                   <div className="w-full md:w-1/3 rounded-lg ">
                     <img
                       className="w-full rounded-lg h-[130px]"
