@@ -33,7 +33,7 @@ const Slider = ({ images, onSelectImage }) => {
       renderedImages.push(
         <div key={i} className={`slider-slide ${i < 3 ? "" : "hidden"}`}>
           <img
-            className="slider-image rounded-xl object-contian h-full w-[100%]"
+            className="slider-image rounded-xl object-contian h-full w-[100%] bg-slate-400"
             src={images[index] || defaultImage}
             alt={images[index] ? `Slide ${index + 1}` : defaultImage}
             onClick={() => handleImageClick(index)}
@@ -45,23 +45,27 @@ const Slider = ({ images, onSelectImage }) => {
   };
 
   return (
-    <div className="slider h-[130px] w-full  mt-5 flex py-4 px-1 items-center">
-      <button onClick={prevSlider}>
-        <FontAwesomeIcon
-          icon={faCircleChevronLeft}
-          className="text-3xl text-violet-400"
-        />
-      </button>
-      <div className="slider w-full h-full flex gap-x-3 mx-3">
-        {renderImages()}
-      </div>
-      <button onClick={nextSlider}>
-        <FontAwesomeIcon
-          icon={faCircleChevronRight}
-          className="text-3xl text-violet-400"
-        />
-      </button>
-    </div>
+    <>
+      {images.length > 1 && (
+        <div className="slider h-[130px] w-full  mt-5 flex py-4 px-1 items-center">
+          <button onClick={prevSlider}>
+            <FontAwesomeIcon
+              icon={faCircleChevronLeft}
+              className="text-3xl text-violet-400"
+            />
+          </button>
+          <div className="slider w-full h-full flex gap-x-3 mx-3 justify-around">
+            {renderImages()}
+          </div>
+          <button onClick={nextSlider}>
+            <FontAwesomeIcon
+              icon={faCircleChevronRight}
+              className="text-3xl text-violet-400"
+            />
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 

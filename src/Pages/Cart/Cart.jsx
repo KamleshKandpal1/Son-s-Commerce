@@ -31,20 +31,20 @@ export default function Cart() {
                 className="box flex w-full p-4 h-auto flex-col gap-y-2"
               >
                 <div className="box-info flex flex-col md:flex-row p-2 items-center gap-x-3 rounded-lg shadow-2xl bg-[#a3aab4a8]">
-                  <div className="w-full md:w-1/3 rounded-lg">
+                  <div className="w-full md:w-1/3 rounded-lg ">
                     <img
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg h-[130px]"
                       src={item.images[0]}
                       alt={item.title}
                     />
                   </div>
                   <div className="details flex flex-col w-full md:w-2/5 px-1 mt-2 md:mt-0">
-                    <span className="text-lg font-semibold text-violet-500 capitalize">
+                    <span className="text-lg font-semibold  capitalize">
                       {item.title}
                     </span>
-                    <span className="text-[13px] font-normal text-[#2B2B52]">
+                    {/* <span className="text-[13px] font-normal text-[#2B2B52]">
                       {item.description}
-                    </span>
+                    </span> */}
                     <span className="text-[18px] font-semibold text-[#26ae60]">
                       ₹{item.price}
                     </span>

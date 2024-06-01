@@ -20,7 +20,7 @@ export default function SimilarProduct({ category }) {
 
   return (
     <div>
-      <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {similarProducts.slice(0, 4).map((item) => (
           <Card
             key={item.id}

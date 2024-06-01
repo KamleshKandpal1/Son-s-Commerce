@@ -17,3 +17,7 @@
   border-radius: 10px;
   background-clip: content-box;
 }
+.custom-swiper-slide {
+  width: 300px !important;
+  /* margin: 4rem !important; */
+}

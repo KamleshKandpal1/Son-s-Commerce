@@ -6,7 +6,7 @@ import Rating from "../Rating/Rating";
 
 const Card = ({ title, description, img, price, rating, id }) => {
   return (
-    <div id={id} className="box w-[280px] py-3 px-4 shadow-2xl mb-6 rounded-lg">
+    <div id={id} className="box w-auto py-3 px-4 shadow-2xl rounded-lg">
       <div className="box-top h-[250px] rounded-lg flex flex-col gap-y-2 relative">
         <img
           className="w-full h-[calc(100%-20px)] rounded-2xl object-scale-down"
