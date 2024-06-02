@@ -19,34 +19,46 @@ export default function Cart() {
 
   return (
     <>
-      <div className="container mx-auto my-6 px-4">
+      <div className="container mx-auto my-6 p-4 max-w-[90%]">
         <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between">
           <div className="cartBox w-full md:w-3/5">
-            <h3 className="text-2xl md:text-3xl ml-4 font-semibold text-[#4C4B4B]">
-              Cart Items
-            </h3>
+            <div className="flex items-center justify-between px-4">
+              <h3 className="text-2xl md:text-3xl font-semibold text-[#4C4B4B]">
+                Cart Items
+              </h3>
+              <div className="remove">
+                <button
+                  className="text-white bg-[#dd2b2b] px-4 py-1 rounded-lg cursor-pointer hover:text-[#dd2b2b] hover:bg-white text-lg"
+                  onClick={() => clearCart(item)}
+                >
+                  Remove <FontAwesomeIcon icon={faDumpster} />
+                </button>
+              </div>
+            </div>
             {cartItems.map((item) => (
               <div
                 key={item.id}
                 className="box flex w-full p-4 h-auto flex-col gap-y-2"
               >
-                <div className="box-info flex flex-col md:flex-row p-2 items-center gap-x-3 rounded-lg shadow-2xl bg-[#a3aab4a8]">
-                  <div className="w-full md:w-1/3 rounded-lg ">
-                    <img
-                      className="w-full rounded-lg h-[130px]"
-                      src={item.images[0]}
-                      alt={item.title}
-                    />
-                  </div>
+                <div className="box-info flex flex-col sm:flex-col md:flex-row p-2 items-center sm:items-start md:items-center gap-x-3 rounded-lg shadow-2xl bg-[#a3aab4a8]">
+                  {item.images && (
+                    <div className="w-full sm:w-full md:w-1/3 rounded-lg">
+                      <img
+                        className="w-full rounded-lg h-[130px] object-scale-down"
+                        src={item.images[0]}
+                        alt={item.title}
+                      />
+                    </div>
+                  )}
                   <div className="details flex flex-col w-full md:w-2/5 px-1 mt-2 md:mt-0">
-                    <span className="text-lg font-semibold  capitalize">
+                    <span className="text-lg font-semibold text-violet-500 capitalize">
                       {item.title}
                     </span>
                     {/* <span className="text-[13px] font-normal text-[#2B2B52]">
-                      {item.description}
-                    </span> */}
+      {item.description}
+    </span> */}
                     <span className="text-[18px] font-semibold text-[#26ae60]">
-                      ₹{item.price}
+                      ${item.price}
                     </span>
                     <span className="text-[16px] font-normal text-[#F3B63A]">
                       <Rating rating={item.rating} />
@@ -72,14 +84,6 @@ export default function Cart() {
                         <p className="text-base">
                           <FontAwesomeIcon icon={faPlus} />
                         </p>
-                      </button>
-                    </div>
-                    <div className="remove">
-                      <button
-                        className="text-white bg-[#dd2b2b] px-4 py-1 rounded-lg cursor-pointer hover:text-[#dd2b2b] hover:bg-white text-lg"
-                        onClick={() => clearCart(item)}
-                      >
-                        Remove <FontAwesomeIcon icon={faDumpster} />
                       </button>
                     </div>
                   </div>
