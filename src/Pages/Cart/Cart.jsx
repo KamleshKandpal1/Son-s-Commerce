@@ -19,7 +19,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className="container mx-auto my-6 p-4 max-w-[90%] md:max-w-full">
+      <div className="container mx-auto my-6 p-4 max-w-[100%] lg:max-w-[90%] ">
         <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between md:relative sm:gap-y-10">
           <div className="cartBox w-full md:w-3/5">
             <div className="flex items-center justify-between px-4">
