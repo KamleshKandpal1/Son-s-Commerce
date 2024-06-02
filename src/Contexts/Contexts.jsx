@@ -55,12 +55,12 @@ export const CartApiProvider = ({ children }) => {
 
   // Function to get total price of items in cart
   const getCartTotal = () => {
-    return cartItems.reduce(
+    const total = cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
+    return parseFloat(total.toFixed(2));
   };
-
   // useEffect to update local storage when cartItems change
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
