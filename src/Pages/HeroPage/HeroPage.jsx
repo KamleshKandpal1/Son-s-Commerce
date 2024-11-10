@@ -26,7 +26,7 @@ function HeroPage({ setSavedFilter }) {
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#f3eeee] drop-shadow-lg text-center">
               Son's Commerce
             </h1>
-            <div className="flex md:justify-center gap-4 px-5 w-full overflow-scroll">
+            <div className="flex gap-4 px-5 w-full overflow-scroll">
               {uniqueCategories.map((categ, index) => (
                 <NavLink
                   key={index}
