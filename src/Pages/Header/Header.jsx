@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import icon from "../../assets/icon.png";
 import { Link } from "react-router-dom";
 import { useCart } from "../../Contexts/Contexts";
-// import { CartContext } from "../../Context/Cart";
 
 function Header() {
   const [isSticky, setIsSticky] = useState(false);
-  // const { cartItem } = useContext(CartContext);
   const { cartItems } = useCart();
 
   useEffect(() => {
@@ -43,7 +41,8 @@ function Header() {
           </Link>
           <Link to="/">
             <h3 className="text-base sm:text-lg font-semibold text-[#f1f1f1]">
-              <span className="text-violet-500">Son's</span> Commerce
+              <span className="text-violet-500">Son&apos;s</span> {""}
+              Commerce
             </h3>
           </Link>
         </div>

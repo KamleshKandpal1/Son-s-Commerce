@@ -26,6 +26,7 @@ export default function Cart() {
               <h3 className="text-2xl md:text-3xl font-semibold text-[#4C4B4B]">
                 Cart Items
               </h3>
+
               <div className="remove">
                 <button
                   className="text-white bg-[#dd2b2b] px-4 py-1 rounded-lg cursor-pointer hover:text-[#dd2b2b] hover:bg-white text-lg"
@@ -36,55 +37,57 @@ export default function Cart() {
               </div>
             </div>
             {cartItems.map((item) => (
-              <div
-                key={item.id}
-                className="box flex w-full p-4 h-auto flex-col gap-y-2"
-              >
-                <div className="box-info flex flex-col sm:flex-col md:flex-row p-2 items-center sm:items-start md:items-center gap-x-3 rounded-lg shadow-2xl bg-[#a3aab4a8]">
-                  {item.images && (
-                    <div className="w-full sm:w-full md:w-1/3 rounded-lg">
-                      <img
-                        className="w-full rounded-lg h-[130px] object-scale-down"
-                        src={item.images[0]}
-                        alt={item.title}
-                      />
-                    </div>
-                  )}
-                  <div className="details flex flex-col w-full md:w-2/5 px-1 mt-2 md:mt-0">
-                    <span className="text-lg font-semibold text-violet-500 capitalize">
-                      {item.title}
-                    </span>
-                    {/* <span className="text-[13px] font-normal text-[#2B2B52]">
+              <div>
+                <div
+                  key={item.id}
+                  className="box flex w-full p-4 h-auto flex-col gap-y-2"
+                >
+                  <div className="box-info flex flex-col sm:flex-col md:flex-row p-2 items-center sm:items-start md:items-center gap-x-3 rounded-lg shadow-2xl bg-[#a3aab4a8]">
+                    {item.images && (
+                      <div className="w-full sm:w-full md:w-1/3 rounded-lg">
+                        <img
+                          className="w-full rounded-lg h-[130px] object-scale-down"
+                          src={item.images[0]}
+                          alt={item.title}
+                        />
+                      </div>
+                    )}
+                    <div className="details flex flex-col w-full md:w-2/5 px-1 mt-2 md:mt-0">
+                      <span className="text-lg font-semibold text-violet-500 capitalize">
+                        {item.title}
+                      </span>
+                      {/* <span className="text-[13px] font-normal text-[#2B2B52]">
       {item.description}
     </span> */}
-                    <span className="text-[18px] font-semibold text-[#26ae60]">
-                      ${item.price}
-                    </span>
-                    <span className="text-[16px] font-normal text-[#F3B63A]">
-                      <Rating rating={item.rating} />
-                    </span>
-                  </div>
-                  <div className="functions flex flex-col gap-y-6 items-center mt-4 md:mt-0">
-                    <div className="left flex items-center">
-                      <button
-                        className="h-8 w-8 text-center bg-[#817c7c] text-white rounded-md"
-                        onClick={() => removeFromCart(item)}
-                      >
-                        <p className="text-base">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </p>
-                      </button>
-                      <span className="mx-2 border border-[#99AAAB] h-8 w-12 text-center pt-1">
-                        {item.quantity}
+                      <span className="text-[18px] font-semibold text-[#26ae60]">
+                        ${item.price}
                       </span>
-                      <button
-                        className="h-8 w-8 text-center bg-[#817c7c] text-white rounded-md"
-                        onClick={() => addToCart(item)}
-                      >
-                        <p className="text-base">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </p>
-                      </button>
+                      <span className="text-[16px] font-normal text-[#F3B63A]">
+                        <Rating rating={item.rating} />
+                      </span>
+                    </div>
+                    <div className="functions flex flex-col gap-y-6 items-center mt-4 md:mt-0">
+                      <div className="left flex items-center">
+                        <button
+                          className="h-8 w-8 text-center bg-[#817c7c] text-white rounded-md"
+                          onClick={() => removeFromCart(item)}
+                        >
+                          <p className="text-base">
+                            <FontAwesomeIcon icon={faMinus} />
+                          </p>
+                        </button>
+                        <span className="mx-2 border border-[#99AAAB] h-8 w-12 text-center pt-1">
+                          {item.quantity}
+                        </span>
+                        <button
+                          className="h-8 w-8 text-center bg-[#817c7c] text-white rounded-md"
+                          onClick={() => addToCart(item)}
+                        >
+                          <p className="text-base">
+                            <FontAwesomeIcon icon={faPlus} />
+                          </p>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

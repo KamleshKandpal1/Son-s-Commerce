@@ -4,7 +4,7 @@ import axios from "axios";
 // Create context for cart
 export const CartContext = createContext();
 
-// Create context for API
+// Create context for API data
 export const ApiContext = createContext();
 
 // Cart and API provider component
@@ -61,6 +61,7 @@ export const CartApiProvider = ({ children }) => {
     );
     return parseFloat(total.toFixed(2));
   };
+
   // useEffect to update local storage when cartItems change
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -90,9 +91,9 @@ export const CartApiProvider = ({ children }) => {
     };
 
     fetchData();
-  }, [filter]);
+  }, [filter]); // Re-run fetch when `filter` changes
 
-  // Create context value for cart
+  // Context value for cart
   const cartContextValue = {
     cartItems,
     addToCart,
@@ -101,11 +102,13 @@ export const CartApiProvider = ({ children }) => {
     getCartTotal,
   };
 
-  // Create context value for API
+  // Context value for API
   const apiContextValue = {
     apiData,
     loading,
     error,
+    filter,
+    setFilter,
   };
 
   return (
@@ -117,20 +120,6 @@ export const CartApiProvider = ({ children }) => {
   );
 };
 
-// Custom hook to consume cart context
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart must be used within a CartApiProvider");
-  }
-  return context;
-};
-
-// Custom hook to consume API context
-export const useApi = () => {
-  const context = useContext(ApiContext);
-  if (!context) {
-    throw new Error("useApi must be used within a CartApiProvider");
-  }
-  return context;
-};
+// Custom hooks for easy context access
+export const useCart = () => useContext(CartContext);
+export const useApi = () => useContext(ApiContext);

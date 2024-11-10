@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { useApi } from "../../Contexts/Contexts";
+import { ApiContext, useApi } from "../../Contexts/Contexts";
 import HeroImage from "../../assets/HeroImage.jpg";
 
-function HeroPage({ setProduct }) {
+function HeroPage({ setSavedFilter }) {
   const { apiData } = useApi();
+  const { setFilter } = useContext(ApiContext);
 
-  const filterByCategory = (categories) => {
-    const filteredProducts = apiData.filter((product) =>
-      product.category.includes(categories)
-    );
-    console.log(filteredProducts);
-    setProduct(filteredProducts);
-  };
+  // Map and transform the categories
+  const Category = apiData.map((product) => product.category);
+
+  // Remove duplicates and add "All"
+  let uniqueCategories = [...new Set(Category)];
+  uniqueCategories = ["All", ...uniqueCategories];
 
   return (
     <>
@@ -26,99 +26,27 @@ function HeroPage({ setProduct }) {
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-[#f3eeee] drop-shadow-lg text-center">
               Son's Commerce
             </h1>
-            {/* <div className="flex flex-wrap gap-3 justify-center">
-              <NavLink
-                to="/all"
-                onClick={() => filterByCategory("all")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                All
-              </NavLink>
-              <NavLink
-                to="/wardrobe"
-                onClick={() => filterByCategory("wardrobe")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                Wardrobe
-              </NavLink>
-              <NavLink
-                to="/electronics"
-                onClick={() => filterByCategory("electronics")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                Electronics
-              </NavLink>
-              <NavLink
-                to="/groceries"
-                onClick={() => filterByCategory("groceries")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                Groceries
-              </NavLink>
-              <NavLink
-                to="/furnitures"
-                onClick={() => filterByCategory("furnitures")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                Furnitures
-              </NavLink>
-              <NavLink
-                to="/shoes"
-                onClick={() => filterByCategory("shoes")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                Shoes
-              </NavLink>
-              <NavLink
-                to="/vehicle"
-                onClick={() => filterByCategory("vehicle")}
-                className={({ isActive }) =>
-                  `block ${
-                    isActive
-                      ? "text-violet-800 bg-[#fff]"
-                      : "text-white bg-transparent"
-                  } w-[70px] h-[70px] md:w-[90px] md:h-[90px] border-2 border-white rounded-full text-sm md:text-[12px] font-bold text-center pt-5 md:pt-9 px-1`
-                }
-              >
-                Vehicle
-              </NavLink>
-            </div> */}
+            <div className="flex md:justify-center gap-4 px-5 w-full overflow-scroll">
+              {uniqueCategories.map((categ, index) => (
+                <NavLink
+                  key={index}
+                  to={categ === "All" ? "/" : `/${categ}`}
+                  onClick={() => {
+                    setFilter(categ === "All" ? "" : categ);
+                    setSavedFilter(categ === "All" ? "" : categ); // Update savedFilter
+                  }}
+                  className={({ isActive }) =>
+                    `block ${
+                      isActive
+                        ? "text-violet-800 bg-[#fff]"
+                        : "text-white bg-transparent"
+                    } min-w-[80px] min-h-[80px] md:min-w-[90px] md:w-[90px] md:h-[90px] md:min-h-[90px] border-2 border-white rounded-full text-[10px] md:text-xs font-bold px-1 capitalize flex justify-center items-center text-center w-[80px] h-[80px]`
+                  }
+                >
+                  {categ}
+                </NavLink>
+              ))}
+            </div>
           </div>
         </div>
       </div>

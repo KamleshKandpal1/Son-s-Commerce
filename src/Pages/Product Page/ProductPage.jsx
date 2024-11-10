@@ -48,9 +48,9 @@ function ProductPage() {
       {product && (
         <div className="w-full h-auto py-8 px-4 sm:px-8 md:px-16 bg-[#F6F4EB]">
           <div className="box">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold ml-4 sm:ml-8 capitalize">
+            {/* <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold ml-4 sm:ml-8 capitalize">
               {product.category}
-            </h2>
+            </h2> */}
             <div className="products flex flex-col md:flex-col items-center w-full px-2 mt-6">
               <div className="py-8 flex flex-col md:flex-row justify-evenly w-full md:w-full">
                 <div className="left w-full md:w-[50%] lg:w-[38%] h-auto pt-5 bg-[#848a8b4b] rounded-lg flex flex-col items-center mb-6 md:mb-0">
@@ -125,7 +125,9 @@ function ProductPage() {
                 <h2 className="text-center my-4 text-2xl sm:text-3xl md:text-4xl font-bold text-[#2C3335]">
                   Similar Products
                 </h2>
-                <SimilarProuct category={product.category} />
+                <div>
+                  <SimilarProuct category={product.category} id={product.id} />
+                </div>
               </div>
             </div>
           </div>

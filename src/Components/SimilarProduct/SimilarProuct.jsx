@@ -4,7 +4,7 @@ import { useApi } from "../../Contexts/Contexts"; // Import useApi hook
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-export default function SimilarProduct({ category }) {
+export default function SimilarProduct({ category, id }) {
   const { apiData } = useApi(); // Access apiData from useApi hook
   const [similarProducts, setSimilarProducts] = useState([]);
 
@@ -12,7 +12,7 @@ export default function SimilarProduct({ category }) {
     // Filter similar products based on category
     if (apiData) {
       const filteredProducts = apiData.filter(
-        (product) => product.category === category
+        (product) => product.category === category && product.id !== id
       );
       setSimilarProducts(filteredProducts);
     }
@@ -35,7 +35,7 @@ export default function SimilarProduct({ category }) {
       </div>
       <div className="block sm:hidden">
         <Swiper spaceBetween={10} slidesPerView={1}>
-          {similarProducts.slice(0, 4).map((item) => (
+          {similarProducts.map((item) => (
             <SwiperSlide key={item.id}>
               <Card
                 title={item.title}
